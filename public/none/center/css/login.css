@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+
+/* 잘 보이게 위해 배경 적용하였습니다. */
+body { color: #595959; background: #ddd; font-family: 'Pretendard-Regular';}
+#wrap {max-width: 430px; min-height: calc(100vh - 300px);margin: 0 auto; background: #fffbef;}
+
+/* header */
+header {position: relative;}
+header img {
+width: 150px;
+z-index: 9;
+cursor: pointer;
+}
+/* btn-menu */
+.btn-menu {
+position: absolute;
+top: -11px; right: 20px;
+display: inline-block;
+height: 100px;
+padding: 35px 25px;
+transition: all 0.3s;
+z-index: 9;
+}
+.btn-menu .item {
+display: block;
+background: #222;
+width: 28px; height: 0.5px;
+margin: 0 0 8px;
+transition: all 0.2s;
+}
+.btn-menu.on .item:nth-child(1) {
+transform: rotate(40deg);
+transform-origin: 2px;
+width: 30px;
+}
+.btn-menu.on .item:nth-child(3) {
+transform: rotate(-40deg);
+transform-origin: 2px;
+width: 30px;
+}
+.btn-menu.on .item:nth-child(2) {opacity: 0;}
+
+
+
+
+/* main */
+.login-bg {
+    position: relative;
+    height: 800px; 
+    
+    
+}
+
+/* login창 */
+.login {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 1000;
+}
+.login input {
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: none;
+    outline: none;
+}
+.login label {cursor: pointer;}
+.login button{
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: none;
+}
+.login .btn.btn-danger {background: #111; color:#fff; margin-bottom: 5px;}
+.login .btn.btn-primary {border: 1px solid #ccc;}
+
+
+
+/* footer */
+footer {width: 100%; background: #fff;}
+footer > div {
+    font-size: 13px; 
+    margin-bottom: 20px;
+    line-height: 1.7;
+    padding: 20px;
+}
+footer > div:first-child{padding-top: 30px;}
+footer .f-bold {color: rgba(0, 0, 0, 1);}
+
+.copy {
+    display:block ;
+    font-weight: 600;
+    font-size: 12px; 
+    padding: 20px; 
+    margin-bottom: 30px;
+}

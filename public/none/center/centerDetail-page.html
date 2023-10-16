@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENTER Detail-page</title>
+    <link rel="stylesheet" href="css/Detail-page.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <header>
+                <a href="center.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+        <!-- btn-menu -->
+                <nav>
+                    <a href="#" class="btn-menu">
+                        <span class="item"></span>
+                        <span class="item"></span>
+                        <span class="item"></span>
+                    </a>
+                    <div class="menu-list">
+                        <ul class="top-menu clear">
+                            <li><a href="#a">Search</a></li>
+                            <li><a href="#a">Login</a></li>
+                            <li><a href="#a">Wish</a></li>
+                            <li><a href="#a">Cart <span class="cart">(0)</span></a></li>
+                        </ul>
+    
+                        <ul class="categorie">
+                            <li><a href="#a">New Collection</a></li>
+                            <li><a href="#a">Shop</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#a">23 Swimwear</a></li>
+                                    <li><a href="#a">All</a></li>
+                                    <li><a href="#a">Denim</a></li>
+                                    <li><a href="#a">Outerwear</a></li>
+                                    <li><a href="#a">Top</a></li>
+                                    <li><a href="#a">Knitwear</a></li>
+                                    <li><a href="#a">Dress</a></li>
+                                    <li><a href="#a">Bottom</a></li>
+                                    <li><a href="#a">Bag</a></li>
+                                    <li><a href="#a">Acc</a></li>
+                                    <li><a href="#a">Lifestyle</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#a">Signature</a></li>
+                            <li><a href="#a">Collection</a></li>
+                            <li><a href="#a">Journal</a></li>
+                        </ul>
+    
+                        <select name="" id="KRW" style="width: 75px;">
+                            <option value="1">&#8361; KRW</option>
+                            <option value="2">$  USD</option>
+                        </select>
+                    </div>
+                </nav>
+        </header>
+        <div class="main-Detail">
+            <div class="swiper Detail-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg01">
+                        <img src="img/Detail_img.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide bg02">
+                        <img src="img/Detail02.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-button-next next"></div>
+                <div class="swiper-button-prev prev"></div>
+            </div>
+            <div id="Detail-Text">
+                
+                <ul>
+                    <li class="title">릴렉스 실키 재킷_cream</li>
+                    <li class="Discount">모던 심플 디자인이 빛나는 재킷</li>
+                    <li class="dis_price">328,000원</li> 
+                    <li class="point01"><a href="#">black</a></li>
+                    <li class="point02"><a href="#">cream</a></li>
+                    <li>
+                        <span>사이즈</span>
+                        <span><a href="#">사이즈 가이드</a></span>
+                    </li>
+                    <li>
+                        <select id="Detail-Search">
+                            <option value="">- [필수] 옵션을 선택해 주세요 -</option>
+                            <option value="">--------------------------</option>
+                            <option value="">SMALL[품절]</option>
+                            <option value="">MEDLUM</option>
+                            <option value="">LARGE</option>
+                        </select>
+                    </li>
+                    <button class="btn btn-danger mt-3" id="modifyButton">수정</button>
+                </ul>
+                <div id="addList">
+                    <div class="titleArea">
+                        <div class="prod_title"></div>
+                        <div class="price_area">
+                            <span class="price"></span>
+                        </div>
+                        <p class="optColor">옵션: <span></span></p>
+                    </div>
+                    <div class="inputNumArea">
+                        <button class="btnMinus">-</button>
+                        <input type="number" id="inputNum" min="1" max="100" step="1"></input>
+                        <button class="btnPlus">+</button>
+                    </div>
+                    <button class="btnClose"><img src="img/btn-map-closed.png" alt="삭제"></button>
+                </div>
+                <button id="Now" onclick="addCart()">BUY NOW</button>
+                <button id="Cart">ADD TO CART</button>
+
+                <!-- ------- -->
+                <div class="Detail-Ep"><!--Ep (Explanation) = 설명 -->
+                    <div class="Info">
+                        <div class="Ep-area clear">
+                            <h3>Prodct Info</h3>
+                            <button>
+                                <img src="img/icon_toggle_plus.png" alt="플러스버튼">
+                            </button>
+                        </div>
+                        <div class="Ep-text">
+                            <p class="big-text">DETAIL</p>
+                            <ul>
+                                <li>독특한 표면감과 부드럽고 시원한 소재로 만들어진 릴렉스핏 재킷입니다.</li>
+                                <li>소재 고유의 우아한 광택이 실루엣을 돋보이게 합니다.</li>
+                                <li>싱글 브레스티드 재킷으로 디자인되어 클래식한 무드의 아이템입니다.</li>
+                                <li>절개 라인은 아웃스티치로 봉제되어 탄탄하고 캐주얼한 느낌을 주었습니다.</li>
+                                <li>빈티지 실키 팬츠와 SET-UP으로 입을 수 있습니다.</li>
+                            </ul>
+                            <p class="big-text">MAKING</p>
+                            <ul>
+                                <li>소매와 몸판에 비스코스 안감이 들어가 있어 이너 착용 시 정전기가 방지됩니다.</li>
+                                <li>촘촘한 땀수로 봉제되어 옷매무새가 단정하고 깨끗합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="Care">
+                        <div class="Ep-area clear">
+                            <h3>Fabric & Care</h3>
+                            <button>
+                                <img src="img/icon_toggle_plus.png" alt="플러스버튼">
+                            </button>
+                        </div>
+                        <div class="Ep-text">
+                            <p class="big-text">FABRIC</p>
+                            <ul>
+                                <li>Color : Cream</li>
+                                <li>Rayon 82% Nylon 18%</li>
+                                <li>레이온의 부드러운 터치와 나일론의 높은 강도를 적절히 배합하여 재직한 원단입니다.</li>
+                                <li>세탁으로 수축되는 것을 방지하기 위해 방축가공을 하여 내구성을 높였습니다.</li>
+                                <li>부드럽고, 가벼운 원단이지만 밀도가 높아 형태가 잘 잡히는 것이 특징입니다.</li>
+                            </ul>
+                            <p class="big-text">CARE INSTRUCTION</p>
+                            <ul>
+                                <li>전문가에게 드라이 클리닝 맡겨주세요.</li>
+                                <li>표백제 사용을 피해주세요.</li>
+                                <li>건조기 사용을 피해주세요.</li>
+                                <li>낮은 온도에 천을 덧대어 다림질 해주세요.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="Refund">
+                        <div class="Ep-area clear">
+                            <h3>Exchange & Refund</h3>
+                            <button>
+                                <img src="img/icon_toggle_plus.png" alt="플러스버튼">
+                            </button>
+                        </div>
+                        <div class="Ep-text">
+                            <p class="big-text">교환 안내</p>
+                            <ul>
+                                <li>제품 수령 후 7일 이내 접수 가능</li>
+                                <li>색상/사이즈 무료교환</li>
+                            </ul>
+                            <p class="big-text">반품 안내</p>
+                            <ul>
+                                <li>제품 수령 후 7일 이내 접수가능</li>
+                                <li> 반품배송비 3,000원 고객부담, 조건부 무료배송의 경우 기존 배송비도 포함하여 총 6,000원</li>
+                                <li>CJ대한통운 택배사 이용시, 택배기사 방문 서비스 신청 / 타 택배사 이용 시, 반품배송지로 선불발송</li>
+                                <li>반품배송지: 경기도 이천시 신둔면 원적로290번길 130-4, 더안(파사드패턴)]</li>
+                                <span>* 더 자세한 교환/반품 안내는 온라인 서포트를 확인부탁드립니다.</span>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Detail-item">
+                <figure>
+                    <img src="img/Detail01.jpg" alt="">
+                </figure>
+            </div>
+            <div class="Detail-Look">
+                <h3>Get the Look</h3>
+                <div class="Look-Img">
+                    <ul class="clear">
+                        <li>
+                            <a href="#">
+                                <figure></figure>
+                                <div class="Looktext">
+                                    <p>코튼 브이넥 니트_black</p>
+                                    <p>138.000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <figure></figure>
+                                <div class="Looktext">
+                                    <p>썸머울 벨티드 팬츠</p>
+                                    <p>198.000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <figure></figure>
+                                <div class="Looktext">
+                                    <p>보이 샌들_black</p>
+                                    <p>198.000원</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="topBtn">
+                <a href="#">
+                    <div class="Toptext">Top</div> 
+                    <figure>
+                        <img src="img/icon_detail_arrow_top.png" alt="">
+                    </figure>
+                </a>
+            </div>
+
+            <footer>
+                <div class="f-css">
+                    <p>고객센터</p>
+                    <p class="f-bold">1541-1633 <span>l</span> 평일 오전 10시 ~ 오후5시</p>
+                    <p class="f-bold">japgaja@naver.com</p>
+                </div>
+                <div class="f-news">
+                    <ul>
+                        <li><a href="#">뉴스레터</a></li>
+                        <li><a href="#">온라인 서포트</a></li>
+                        <li><a href="#">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="f-sns">
+                    <ul>
+                        <li><a href="#">인스타그램</a></li>
+                        <li><a href="#">카카오톡</a></li>
+                        <li><a href="#">뮤직</a></li>
+                    </ul>
+                </div>
+                <span class="copy">&copy;2023 Facade Center</span>
+            </footer>
+
+            <div class="modal_box">
+                <div class="addInfo">
+                    <p class="text">선택한 상품이 장바구니에 담겼습니다</p>
+                    <div class="btn_area">
+                        <button class="btnShopping" onclick="modalClose()">쇼핑계속하기</button>
+                        <button class="btnCareConfirm" onclick="modalClose()">장바구니확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/Detail-page.js"></script>
+    <script src="js/center.js"></script>
+
+</body>
+</html>
