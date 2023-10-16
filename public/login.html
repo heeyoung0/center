@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+    <!-- 아래부터 쭉 복붙 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>       
+        
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+<!-- btn-menu -->
+        <nav>
+            <a href="#" class="btn-menu">
+                <span class="item"></span>
+                <span class="item"></span>
+                <span class="item"></span>
+            </a>
+            <div class="menu-list">
+                <ul class="top-menu clear">
+                    <li><a href="#a">Search</a></li>
+                    <li class="loginText"><a href="login.html">Login</a></li>
+                    <li><a href="#a">Wish</a></li>
+                    <li><a href="#a">Cart <span class="cart">(0)</span></a></li>
+                </ul>
+
+                <ul class="categorie">
+                    <li><a href="#a">New Collection</a></li>
+                    <li><a href="#a">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="#a">23 Swimwear</a></li>
+                            <li><a href="#a">All</a></li>
+                            <li><a href="#a">Denim</a></li>
+                            <li><a href="list.html">Outerwear</a></li>
+                            <li><a href="#a">Top</a></li>
+                            <li><a href="#a">Knitwear</a></li>
+                            <li><a href="#a">Dress</a></li>
+                            <li><a href="#a">Bottom</a></li>
+                            <li><a href="#a">Bag</a></li>
+                            <li><a href="#a">Acc</a></li>
+                            <li><a href="#a">Lifestyle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#a">Signature</a></li>
+                    <li><a href="#a">Collection</a></li>
+                    <li><a href="#a">Journal</a></li>
+                </ul>
+
+                <select name="" id="KRW" style="width: 75px;">
+                    <option value="1">&#8361; KRW</option>
+                    <option value="2">$  USD</option>
+                </select>
+            </div>
+        </nav>
+        </header>
+
+        <main>
+            <div class="login-bg"></div>
+            <div class="login">
+                <form class="mb-5">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="loginEmail" placeholder="아이디를 입력하세요.">
+                        <div id="emailHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="loginPassword" placeholder="패스워드를 입력하세요.">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="seve" style="width: 15px; height: 15px; margin-bottom: 20px;">
+                        <label for="seve">아이디 저장</label>
+                    </div>
+                    <button type="button" class="btn btn-danger" id="emailLogin" onclick="changeText">이메일로 로그인하기</button>
+
+                    <button type="button" class="btn btn-danger"><a href="javascript:kakaoLogin();">
+                    카카오톡으로 로그인하기</a></button>
+
+                    <button type="submit" class="btn btn-primary" id="signUpButton"><a href="account.html">회원가입</a></button>
+                    
+                </form>
+            </div>
+        </main>
+        <!--fixedBanner -->
+        <section class="fixed-banner">
+            <div class="fixed-chat">
+                    <img src="img/hello-ico.png" alt="logo">
+            </div>
+        </section>
+        <!-- //main-login -->
+        <footer>
+            <div class="f-css">
+                <p>고객센터</p>
+                <p class="f-bold">1541-1633 <span>l</span> 평일 오전 10시 ~ 오후5시</p>
+                <p class="f-bold">japgaja@naver.com</p>
+            </div>
+            <div class="f-news">
+                <ul>
+                    <li><a href="#">뉴스레터</a></li>
+                    <li><a href="#">온라인 서포트</a></li>
+                    <li><a href="#">회사 소개</a></li>
+                </ul>
+            </div>
+            <div class="f-sns">
+                <ul>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">카카오톡</a></li>
+                    <li><a href="#">뮤직</a></li>
+                </ul>
+            </div>
+            <span class="copy">&copy;2023 Facade Center</span>
+        </footer>
+    <!-- //footer -->
+
+    </div>
+    <!-- //wrap -->
+
+    <!-- <script src="js/setting.js"></script> -->
+
+    <!-- 
+    카카오로그인
+    주의할 점... 터미널 호스팅주소? 바꿔야함 동일한 호스트주소 아니면 로그인 오류남.
+    현재 카톡 http://127.0.0.1:5500으로 주소 등록되어있음. -->
+    <script>
+        
+    window.Kakao.init("1e4943a41689bbbf8fcd6b919c685daf");
+
+    function kakaoLogin() {
+        window.Kakao.Auth.loginForm({
+            scope: 'profile_nickname, profile_image,account_email,gender',
+            success: function(authObj) {
+                console.log(authObj)
+                window.Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: res => {
+                        const kakao_account = res.kakao_account;
+                        console.log(kakao_account)
+                    }
+                })
+            }
+        })
+    }
+
+
+    </script>
+
+    <!-- 이메일로 로그인하기 -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+    apiKey: "AIzaSyAd3zuH726zBIr-RQvNLonrjLtWOTNFJbk",
+    authDomain: "centert-3ae9f.firebaseapp.com",
+    databaseURL: "https://centert-3ae9f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "centert-3ae9f",
+    storageBucket: "centert-3ae9f.appspot.com",
+    messagingSenderId: "715194698544",
+    appId: "1:715194698544:web:00c072cddbccc165afd6f5"
+    };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+        $('#emailLogin').on('click', function() {
+            let loginEmail = $('#loginEmail').val();
+            let loginPwd = $('#loginPassword').val();
+
+            firebase.auth().signInWithEmailAndPassword(loginEmail, loginPwd).then((result)=> {
+                console.log(result.user);
+                confirm("로그인되었습니다. 마이페이지로 이동합니다.");
+                window.location.href='mypage.html'
+            })
+        })
+        
+        const login = document.querySelector('.btn-danger');
+        const mypageText = document.querySelectorAll('.mypageText')
+
+        function changeText() {
+            mypageText.innerHTML = `<a href="mypage.html">Mypage</a>`
+        }
+    </script>
+    
+<script src="js/center.js"></script>
+<script src="js/setting.js"></script>
+</body>
+</html>

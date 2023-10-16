@@ -1,0 +1,261 @@
+@charset "utf-8";
+@import url('font.css');
+
+body {
+    font-family: 'Pretendard-Regular';
+    font-weight: 300;
+    color: #595959;
+    position: relative;
+}
+#wrap {
+    max-width: 430px;
+}
+/* ---------------------logo */
+header {
+    background: #fffbef;
+  }
+  header img {
+    width: 100px;
+    z-index: 9;
+    padding: 50px 20px 0;
+    cursor: pointer;
+}
+  
+  /* ---------------------intro */
+  .intro {
+    position: fixed;
+    top: 0; left: 0px; right: 0; bottom: 0;
+    width: 430px; height: 866px;
+    margin-top: -44px;
+    background: #fffbef;
+    z-index: 15;
+    /* display: none; */
+  }
+  .intro .intro-bg {
+    position: absolute;
+    width: 100%;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -40%);
+    text-align: center;
+  }
+  .intro .intro-bg img {
+    width: 150px;
+  }
+  .intro .intro-bg  p{
+    display: inline;
+    font-size: 14px;
+  }
+  
+  .intro .intro-bg .first-text {
+    opacity: 0; 
+  }
+  .intro .intro-bg .second-text {
+    opacity: 0;
+  
+  }
+  
+  
+  /* ------------------------ main-bg */
+  .main-bg{ 
+    margin-top: -150px;
+    z-index: -1;
+    background: url(../img/bg_main.jpg) no-repeat center/cover;
+    width: 100%; height: 900px;
+  }
+  
+  /* ------------------------ fixedBanner */
+  
+  .fixed-banner {
+    position: fixed;
+    bottom: 30px; right: 25px;
+    cursor: pointer;
+  }
+  .fixed-banner .fixed-chat img{
+    width: 70px;
+  }
+  /* .fixed-banner .fixed-chat a {
+    display: block;
+    padding: 20px;
+  
+  } */
+  
+  
+  /* ---------------------- btn-menu */
+  .btn-menu {
+    position: absolute;
+    top: 65px; right: 30px;
+    display: inline-block;
+    height: 10px;
+    transition: all 0.3s;
+    z-index: 9;
+}
+  .btn-menu .item {
+    display: block;
+    background: #222;
+    width: 20px; height: 0.5px;
+    margin: 0 0 5px;
+    transition: all 0.2s;
+  }
+  .btn-menu.on .item:nth-child(1) {
+    transform: rotate(42deg);
+    transform-origin: 2px;
+  }
+  .btn-menu.on .item:nth-child(3) {
+      transform: rotate(-42deg);
+      transform-origin: 2px;
+  }
+  .btn-menu.on .item:nth-child(2) {opacity: 0;}
+  
+  
+  /*  ------------------menu-list*/
+  .menu-list { 
+    width: 100%; height: 1000px;
+    position: fixed;
+    top: 0;
+    margin-top: -44px;
+    background: #fffbef;
+    position: absolute;
+    padding-top: 95px;
+    display: none;
+  }
+  .menu-list .top-menu { 
+    padding: 10px 0 30px 20px;
+  }
+  .menu-list .top-menu li { 
+    float: left;
+    width: 55px;
+  }
+  .menu-list .top-menu a{
+    display: block;
+    font-size: 15px;
+  }
+  .menu-list .categorie {
+    font-size: 15px;
+  }
+  .menu-list .categorie > li {
+    padding: 0 0 10px 20px;
+  } 
+  .menu-list .categorie .sub-menu li {
+    padding: 8px 0 0 30px;
+  }
+  .menu-list .categorie .sub-menu li a {
+    display: block;
+  }
+  .menu-list select { 
+    margin: 40px 0 0 9px;
+    border: none;
+    background: #fffbef;
+    font-size: 9px;
+    color: #7e7e7e94;
+  }
+  .menu-list select option {color: #000;}
+  
+  /* -----------------footer */
+  footer { 
+    width: 100%; 
+    background: #fff;
+  }
+  footer > div {
+      font-size: 13px; 
+      margin-bottom: 20px;
+      line-height: 1.7;
+      padding: 20px;
+  }
+  footer > div:first-child{
+    padding-top: 30px;
+  }
+  footer .f-bold {
+    color: rgba(0, 0, 0, 1);
+  }
+  .copy {
+      display:block ;
+      font-weight: 600;
+      font-size: 12px; 
+      padding: 20px; 
+      margin-bottom: 30px;
+  }
+.container {
+    padding: 0 30px 10px 30px;
+    box-sizing: border-box;
+    background: #fffcef;
+}
+.member-area {
+    padding: 40px 0 30px 0;
+    box-sizing: border-box;
+}
+.member-area .name {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+}
+.member-area .name span {
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+.member-area .btn-consult {
+    float: right;
+}
+.member-area .btn-consult a {
+    border: 1px solid #ddd;
+    padding: 7px 13px;
+    font-size: 15px;
+}
+/* member-area */
+.member-grade {
+    margin-bottom: 10px;
+    background: #444;
+    color: #fff;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.member-grade li {
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+.member-grade li:last-child {
+    padding-bottom: 0;
+}
+.member-grade .grade span {
+    border-bottom: 1px solid #fff;
+    margin-right: 10px;
+}
+.member-grade .coupon a, .money a {
+    display: block;
+    float: right;
+    border-bottom: 1px solid #fff;
+}
+.shopping-menu ul li {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.shopping-menu ul .sp-title {
+    font-size: 15px;
+    color: #8d8d8d;
+    padding-top: 70px;
+}
+.shopping-menu ul:first-child .sp-title {
+    padding-top: 50px;
+}
+.shopping-menu ul li a {
+    display: block;
+    height: 20px;
+}
+.shopping-menu ul li a img {
+    float: right;
+    width: 25px;
+    vertical-align: -6px;
+}
+/* shopping-menu */
+.logout {
+    text-align: center;
+    margin: 55px 0;
+    border: 1px solid #ddd;
+    padding: 20px 0;
+    font-size: 15px;
+    color: #999;
+    font-weight: 600;
+}
+/* logout */

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENTER-회원가입</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/center.css">
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner">
+            <header>
+                <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+        <!-- btn-menu -->
+                <nav>
+                    <a href="#" class="btn-menu">
+                        <span class="item"></span>
+                        <span class="item"></span>
+                        <span class="item"></span>
+                    </a>
+                    <div class="menu-list">
+                        <ul class="top-menu clear">
+                            <li><a href="#a">Search</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="#a">Wish</a></li>
+                            <li><a href="#a">Cart <span class="cart">(0)</span></a></li>
+                        </ul>
+        
+                        <ul class="categorie">
+                            <li><a href="#a">New Collection</a></li>
+                            <li><a href="#a">Shop</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#a">23 Swimwear</a></li>
+                                    <li><a href="#a">All</a></li>
+                                    <li><a href="#a">Denim</a></li>
+                                    <li><a href="list.html">Outerwear</a></li>
+                                    <li><a href="#a">Top</a></li>
+                                    <li><a href="#a">Knitwear</a></li>
+                                    <li><a href="#a">Dress</a></li>
+                                    <li><a href="#a">Bottom</a></li>
+                                    <li><a href="#a">Bag</a></li>
+                                    <li><a href="#a">Acc</a></li>
+                                    <li><a href="#a">Lifestyle</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#a">Signature</a></li>
+                            <li><a href="#a">Collection</a></li>
+                            <li><a href="#a">Journal</a></li>
+                        </ul>
+        
+                        <select name="" id="KRW" style="width: 75px;">
+                            <option value="1">&#8361; KRW</option>
+                            <option value="2">$  USD</option>
+                        </select>
+                    </div>
+                </nav>
+            </header>
+            <form class="mb-5">
+            <!-- <div class="ac"> -->
+                <h1 class="ac-h1">회원가입</h1>
+                <hr>
+                <div class="mb-3">
+                    <p>아이디 *</p>
+                    <input type="email" class="form-control" id="signUpEmail" placeholder="name@email.com" required>
+                </div>
+                <!-- <div class="ac">
+                    <p>아이디 *</p>
+                    <input type="email" class="form-control" id="signUpEmail" placeholder="name@email.com">
+                    <p>(영소문자/숫자/@이메일포함)</p>
+                </div> -->
+                <!-- <div class="ac">
+                    <p>비밀번호 *</p>
+                    <input type="password" class="ac-input">
+                    <p>(영문,숫자, 특수문자 중 2가지 이상 조합)</p>
+                </div> -->
+                <div class="mb-3">
+                    <p>비밀번호 *</p>
+                    <input type="password" class="form-control" id="signUpPassword" placeholder="숫자/문자 6자리이상" required>
+                </div>
+                <div class="ac">
+                    <p>이름 *</p>
+                    <input type="text" class="ac-input" required>
+                </div>
+                <div class="ac">
+                    <p>휴대폰 *</p>
+                    <select id="phone-n">
+                        <option>010</option>
+                        <option>011</option>
+                        <option>02</option>
+                    </select>
+                    <p class="h">-</p>
+                    <input type="text" class="ac-phone" required>
+                    <p class="h">-</p>
+                    <input type="text" class="ac-phone" required>
+                    
+                </div>
+                <!-- <div class="ac">
+                    <p>이메일 *</p>
+                    <input type="email" class="ac-input">
+                </div> -->
+            <!-- </div> -->
+            </form>
+            <!-- //ac -->
+
+                <div class="checkbox">
+                    <div class="check">
+                        <input type="checkbox" id="ac-check1" onclick="selectAll(this)">
+                        <label for="ac-check1">이용약관에 모두 동의합니다.</label>
+                    </div>
+                    <hr>
+                    <div class="check">
+                        <input type="checkbox" id="ac-check2" >
+                        <label for="ac-check2">[필수] <u><a href="#">이용약관</a></u>에 모두 동의합니다. </label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox"id="ac-check3" >
+                        <label for="ac-check3">[필수] <u><a href="#">개인정보 수집 및 이용</a></u>에 동의합니다.</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox"id="ac-check4">
+                        <label for="ac-check4">[선택] 마케팅 정보 SNS 수신에 동의합니다.</label>
+                    </div>
+                </div>
+                <!-- //체크박스 이용약관 -->
+                <button type="submit" class="btn btn-primary" id="signUpButton">가입하기</button>
+            
+        </div>
+        <!-- //inner -->
+        <footer>
+            <div class="f-css">
+                <p>고객센터</p>
+                <p class="f-bold">1541-1633 <span>l</span> 평일 오전 10시 ~ 오후5시</p>
+                <p class="f-bold">japgaja@naver.com</p>
+            </div>
+            <div class="f-news">
+                <ul>
+                    <li><a href="#">뉴스레터</a></li>
+                    <li><a href="#">온라인 서포트</a></li>
+                    <li><a href="#">회사 소개</a></li>
+                </ul>
+            </div>
+            <div class="f-sns">
+                <ul>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">카카오톡</a></li>
+                    <li><a href="#">뮤직</a></li>
+                </ul>
+            </div>
+            <span class="copy">&copy;2023 Facade Center</span>
+        </footer>
+    <!-- //footer -->
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="js/center.js"></script>
+    <script src="js/setting.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAd3zuH726zBIr-RQvNLonrjLtWOTNFJbk",
+            authDomain: "centert-3ae9f.firebaseapp.com",
+            databaseURL: "https://centert-3ae9f-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "centert-3ae9f",
+            storageBucket: "centert-3ae9f.appspot.com",
+            messagingSenderId: "715194698544",
+            appId: "1:715194698544:web:00c072cddbccc165afd6f5"
+    };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
+
+        document.getElementById("signUpButton").addEventListener('click', (e)=>{
+            e.preventDefault();
+
+            const signUpEmail = document.getElementById("signUpEmail").value;
+            const signUpPassword = document.getElementById("signUpPassword").value;
+            console.log(signUpEmail, signUpPassword)
+
+            createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+            .then((userCredential) => {
+                // Signed in 
+                console.log(userCredential)
+                confirm("회원가입이 완료되었습니다.");
+                document.getElementById('signUpEmail').value ='';
+                document.getElementById('signUpPassword').value ='';
+                
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                console.log('error')
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+        })
+
+        document.getElementById('signUpButton').addEventListener('click', ()=>{
+            if(confirm('회원가입이 완료 되었습니다.'))
+            window.location.href='login.html';
+        })
+    </script>
+    <script>
+            function selectAll(selectAll) {
+                const checkBox = document.querySelectorAll('input[type="checkbox"]');
+                checkBox.forEach((checkbox) => {
+                    checkbox.checked = selectAll.checked
+                })
+            }
+    </script>
+</body>
+</html>

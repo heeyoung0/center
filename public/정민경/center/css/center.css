@@ -1,0 +1,172 @@
+@charset "utf-8";
+@import url(reset.css);
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {width: 430px;}
+body {width: 100%; position: relative;}
+
+/* ---------------------logo */
+header img {
+  width: 100px;
+  z-index: 9;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* ---------------------intro */
+.intro {
+  position: fixed;
+  top: 0; left: 0px; right: 0; bottom: 0;
+  width: 430px; height: 866px;
+  margin-top: -44px;
+  background: #fffbef;
+  z-index: 15;
+  /* display: none; */
+}
+.intro .intro-bg {
+  position: absolute;
+  width: 100%;
+  top: 40%; left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+}
+.intro .intro-bg img {
+  width: 150px;
+}
+.intro .intro-bg  p{
+  display: inline;
+  font-size: 14px;
+}
+
+.intro .intro-bg .first-text {
+  opacity: 0; 
+}
+.intro .intro-bg .second-text {
+  opacity: 0;
+
+}
+
+
+/* ------------------------ main-bg */
+.main-bg{ 
+  margin-top: -64px;
+  z-index: -1;
+  background: url(../A.img/bg_main.jpg) no-repeat center/cover;
+  width: 100%; height: 900px;
+}
+
+/* ------------------------ fixedBanner */
+
+.fixed-banner {
+  position: fixed;
+  bottom: 30px; right: 25px;
+  cursor: pointer;
+}
+.fixed-banner .fixed-chat img{
+  width: 70px;
+}
+/* .fixed-banner .fixed-chat a {
+  display: block;
+  padding: 20px;
+
+} */
+
+
+/* ---------------------- btn-menu */
+.btn-menu {
+  position: absolute;
+  top: -18px; right: 0;
+  display: inline-block;
+  height: 100px;
+  padding: 35px 25px;
+  transition: all 0.3s;
+  z-index: 9;
+}
+.btn-menu .item {
+  display: block;
+  background: #222;
+  width: 20px; height: 0.5px;
+  margin: 0 0 5px;
+  transition: all 0.2s;
+}
+.btn-menu.on .item:nth-child(1) {
+  transform: rotate(42deg);
+  transform-origin: 2px;
+}
+.btn-menu.on .item:nth-child(3) {
+    transform: rotate(-42deg);
+    transform-origin: 2px;
+}
+.btn-menu.on .item:nth-child(2) {opacity: 0;}
+
+
+/*  ------------------menu-list*/
+.menu-list { 
+  width: 100%; height: 1000px;
+  position: fixed;
+  margin-top: -44px;
+  background: #fffbef;
+  position: absolute;
+  display: none;
+}
+.menu-list .top-menu { 
+  padding: 10px 0 30px 20px;
+}
+.menu-list .top-menu li { 
+  float: left;
+  width: 50px;
+}
+.menu-list .top-menu a{
+  display: block;
+  font-size: 13px;
+}
+.menu-list .categorie {
+  font-size: 13px;
+}
+.menu-list .categorie > li {
+  padding: 0 0 10px 20px;
+} 
+.menu-list .categorie .sub-menu li {
+  padding: 8px 0 0 30px;
+}
+.menu-list .categorie .sub-menu li a {
+  display: block;
+}
+.menu-list select { 
+  margin: 40px 0 0 9px;
+  border: none;
+  background: #fffbef;
+  font-size: 9px;
+  color: #7e7e7e94;
+}
+.menu-list select option {color: #000;}
+
+/* -----------------footer */
+footer { 
+  width: 100%; 
+  background: #fff;
+}
+footer > div {
+    font-size: 13px; 
+    margin-bottom: 20px;
+    line-height: 1.7;
+    padding: 20px;
+}
+footer > div:first-child{
+  padding-top: 30px;
+}
+footer .f-bold {
+  color: rgba(0, 0, 0, 1);
+}
+.copy {
+    display:block ;
+    font-weight: 600;
+    font-size: 12px; 
+    padding: 20px; 
+    margin-bottom: 30px;
+}

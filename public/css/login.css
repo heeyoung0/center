@@ -1,0 +1,166 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url(font.css);
+
+
+/* 잘 보이게 위해 배경 적용하였습니다. */
+html {width: 430px;}
+body{width: 100%; position: relative;}
+
+/* ---------------------logo */
+header {
+  background: #fffbef;
+}
+header img {
+  width: 100px;
+  z-index: 9;
+  padding: 50px 20px 0;
+  cursor: pointer;
+}
+body { 
+    width: 100%;
+    color: #595959; 
+    font-family: 'Pretendard-Regular';
+    position: relative;
+}
+#wrap {
+  max-width: 430px;
+}
+
+/* main */
+.login-bg {
+    position: relative;
+    height: 800px; 
+    margin-top: -45px;
+    background: #fffbef;   
+    z-index: -1;
+}
+
+/* ---------------------- btn-menu */
+.btn-menu {
+  position: absolute;
+  top: -18px; right: 30px;
+  display: inline-block;
+  height: 10px;
+  margin: 83px 20px;
+  transition: all 0.3s;
+  z-index: 16;
+}
+.btn-menu .item {
+  display: block;
+  background: #222;
+  width: 20px; height: 0.5px;
+  margin: 0 0 5px;
+  transition: all 0.2s;
+}
+.btn-menu.on .item:nth-child(1) {
+  transform: rotate(42deg);
+  transform-origin: 2px;
+}
+.btn-menu.on .item:nth-child(3) {
+  transform: rotate(-42deg);
+  transform-origin: 2px;
+}
+.btn-menu.on .item:nth-child(2) {opacity: 0;}
+
+  .menu-list { 
+    width: 100%; height: 1000px;
+    position: fixed;
+    margin-top: -44px;
+    background: #fffbef;
+    position: absolute;
+    display: none;
+    z-index: 15;
+  }
+  .menu-list .top-menu { 
+    padding: 10px 0 30px 20px;
+  }
+  .menu-list .top-menu li { 
+    float: left;
+    width: 50px;
+  }
+  .menu-list .top-menu a{
+    display: block;
+    font-size: 13px;
+  }
+  .menu-list .categorie {
+    font-size: 13px;
+  }
+  .menu-list .categorie > li {
+    padding: 0 0 10px 20px;
+  } 
+  .menu-list .categorie .sub-menu li {
+    padding: 8px 0 0 30px;
+  }
+  .menu-list .categorie .sub-menu li a {
+    display: block;
+  }
+  .menu-list select { 
+    margin: 40px 0 0 9px;
+    border: none;
+    background: #fffbef;
+    font-size: 9px;
+    color: #7e7e7e94;
+  }
+  .menu-list select option {color: #000;}
+
+/* login창 */
+.login {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 13;
+}
+.login input {
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: none;
+}
+.login label {cursor: pointer;}
+.login button{
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: none;
+}
+.login .btn.btn-danger {background: #111; color:#fff; margin-bottom: 5px;}
+.login .btn.btn-primary {border: 1px solid #ccc;}
+
+/* ------------------------ fixedBanner */
+
+.fixed-banner {
+    position: fixed;
+    bottom: 30px; right: 25px;
+    cursor: pointer;
+    z-index: 51;
+}
+.fixed-banner .fixed-chat img{
+    width: 70px;
+}
+
+
+
+/* footer */
+footer {width: 100%; background: #fff;}
+footer > div {
+    font-size: 13px; 
+    margin-bottom: 20px;
+    line-height: 1.7;
+    padding: 20px;
+}
+footer > div:first-child{padding-top: 30px;}
+footer .f-bold {color: rgba(0, 0, 0, 1);}
+
+.copy {
+    display:block ;
+    font-weight: 600;
+    font-size: 12px; 
+    padding: 20px; 
+    margin-bottom: 30px;
+}

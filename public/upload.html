@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPload</title>
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+<!-- btn-menu -->
+            <nav>
+                <a href="#" class="btn-menu">
+                    <span class="item"></span>
+                    <span class="item"></span>
+                    <span class="item"></span>
+                </a>
+                <div class="menu-list">
+                    <ul class="top-menu clear">
+                        <li><a href="#a">Search</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="#a">Wish</a></li>
+                        <li><a href="#a">Cart <span class="cart">(0)</span></a></li>
+                    </ul>
+
+                    <ul class="categorie">
+                        <li><a href="#a">New Collection</a></li>
+                        <li><a href="#a">Shop</a>
+                            <ul class="sub-menu">
+                                <li><a href="#a">23 Swimwear</a></li>
+                                <li><a href="#a">All</a></li>
+                                <li><a href="#a">Denim</a></li>
+                                <li><a href="list.html">Outerwear</a></li>
+                                <li><a href="#a">Top</a></li>
+                                <li><a href="#a">Knitwear</a></li>
+                                <li><a href="#a">Dress</a></li>
+                                <li><a href="#a">Bottom</a></li>
+                                <li><a href="#a">Bag</a></li>
+                                <li><a href="#a">Acc</a></li>
+                                <li><a href="#a">Lifestyle</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#a">Signature</a></li>
+                        <li><a href="#a">Collection</a></li>
+                        <li><a href="#a">Journal</a></li>
+                    </ul>
+    
+                    <select name="" id="KRW" style="width: 75px;">
+                        <option value="1">&#8361; KRW</option>
+                        <option value="2">$  USD</option>
+                    </select>
+                </div>
+            </nav>
+        </header>
+
+<!-- UPload ui부분 -->
+    <div id="wrap">
+        <div class="container">
+            <input type="text" id="title" placeholder="제목을 적어주세요." required>
+            <textarea id="content" cols="30" rows="10" placeholder="상세 내용을 적어주세요." required></textarea>
+            <input type="text" id="price" placeholder="금액을 적어주세요." required>
+            <input type="file" id="image">
+            <button type="submit" id="btn">상품 업로드</button>
+        </div>
+    </div>
+    </div>
+    <script src="js/center.js"></script>
+    <script src="js/setting.js"></script>
+
+    <script>
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        $('#btn').on('click', (e)=> {
+            e.preventDefault();
+
+            let file = document.querySelector('#image').files[0];
+            let storageRef = storage.ref();
+            let storageURL = storageRef.child('image/' + file.name);
+            let storageUpload = storageURL.put(file)
+
+            storageUpload.on('state_changed',
+            null,
+            (error) => {
+                console.log('실패사유는', error)
+            },
+            () => {
+                storageUpload.snapshot.ref.getDownloadURL().then((url)=> {
+                    let uploadProduct = {
+                        상품명 : $('#title').val(),
+                        설명 : $('#content').val(),
+                        가격 : Number($('#price').val()),
+                        이미지 : url,
+                        uid : JSON.parse(localStorage.getItem('user'))
+                    }
+                    console.log(uploadProduct.상품명)
+                    db.collection('centerT').add(uploadProduct).then((result)=> {
+                        console.log(result.id);
+                        confirm("업로드가 완료되었습니다. 메인 페이지로 이동합니다.")
+                        window.location.href='list.html'
+                    }).catch((err) => {
+                        console.log(err)
+                    })
+                })
+            }
+            )
+        })
+    </script>
+</body>
+</html>
