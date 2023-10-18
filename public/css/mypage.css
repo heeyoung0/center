@@ -109,7 +109,7 @@ header {
   
   /*  ------------------menu-list*/
   .menu-list { 
-    width: 100%; height: 1000px;
+    width: 100%; height: 100%;
     position: fixed;
     top: 0;
     margin-top: -44px;
@@ -117,6 +117,7 @@ header {
     position: absolute;
     padding-top: 95px;
     display: none;
+    box-sizing: border-box;
   }
   .menu-list .top-menu { 
     padding: 10px 0 30px 20px;
